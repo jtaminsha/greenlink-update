@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "312150197694",
+    "firebase_url": "https://green-house-by-greenlink-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "green-house-by-greenlink",
+    "storage_bucket": "green-house-by-greenlink.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312150197694:android:18a7d0c5cad9bc7f68e5ef",
+        "android_client_info": {
+          "package_name": "Greenhouse.GreenLink.GreenLink"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCD_fxuydNJ24XIVp02Frlr_IKHtJEbxPY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312150197694:android:2ab25dc6e3df4a9268e5ef",
+        "android_client_info": {
+          "package_name": "Greenhouse.Greenlink.GreenLink"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCD_fxuydNJ24XIVp02Frlr_IKHtJEbxPY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312150197694:android:9fded62ccad1810468e5ef",
+        "android_client_info": {
+          "package_name": "smart_irrigation_system.by.GreenLink"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCD_fxuydNJ24XIVp02Frlr_IKHtJEbxPY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
