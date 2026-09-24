@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>GreenLink — Smart Agriculture IoT Dashboard</title>
+
+<!-- PWA / Installable App metadata -->
+<meta name="theme-color" content="#10b981" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="GreenLink" />
+<meta name="description" content="Live greenhouse monitoring &amp; control dashboard for the GreenLink smart agriculture system." />
+<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjogIkdyZWVuTGluayBTbWFydCBBZ3JpY3VsdHVyZSIsICJzaG9ydF9uYW1lIjogIkdyZWVuTGluayIsICJkZXNjcmlwdGlvbiI6ICJMaXZlIGdyZWVuaG91c2UgbW9uaXRvcmluZyAmIGNvbnRyb2wgZGFzaGJvYXJkIiwgInN0YXJ0X3VybCI6ICIuIiwgInNjb3BlIjogIi4iLCAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwgImJhY2tncm91bmRfY29sb3IiOiAiIzBiMGYxNyIsICJ0aGVtZV9jb2xvciI6ICIjMTBiOTgxIiwgImljb25zIjogW3sic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIWnBaWGRDYjNnOUlqQWdNQ0ExTVRJZ05URXlJajQ4Y21WamRDQjNhV1IwYUQwaU5URXlJaUJvWldsbmFIUTlJalV4TWlJZ2NuZzlJakV3TUNJZ1ptbHNiRDBpSXpFd1lqazRNU0l2UGp4d1lYUm9JR1pwYkd3OUlpTm1abVptWm1ZaUlIUnlZVzV6Wm05eWJUMGlkSEpoYm5Oc1lYUmxLRGsyTERrMktTQnpZMkZzWlNneE15NDJLU0lnWkQwaVRURXlJREpETmk0ME9DQXlJRElnTmk0ME9DQXlJREV5WXpBZ015NDJOaUF5TGpBeElEWXVPRFFnTkM0NU9TQTRMalU1TGpNMUxqSXVOemN1TURZdU9UUXRMakk0TGpFMkxTNHpOQzR3TWkwdU56VXRMak15TFM0NU5rTTFMakEzSURFM0xqZzBJRE11TlNBeE5TNHhNU0F6TGpVZ01USmpNQzAwTGpZNUlETXVPREV0T0M0MUlEZ3VOUzA0TGpWek9DNDFJRE11T0RFZ09DNDFJRGd1TldNd0lETXVNVEV0TVM0MU55QTFMamcwTFRRdU1URWdOeTR6TlMwdU16UXVNakV0TGpRNExqWXlMUzR6TWk0NU5pNHhOeTR6TkM0MU9TNDBPQzQ1TkM0eU9FTXhPUzQ1T1NBeE9DNDROQ0F5TWlBeE5TNDJOaUF5TWlBeE1tTXdMVFV1TlRJdE5DNDBPQzB4TUMweE1DMHhNSG9pTHo0OGNHRjBhQ0JtYVd4c1BTSWpabVptWm1abUlpQjBjbUZ1YzJadmNtMDlJblJ5WVc1emJHRjBaU2c1Tml3NU5pa2djMk5oYkdVb01UTXVOaWtpSUdROUlrMHhNaUEyWXkwekxqTXhJREF0TmlBeUxqWTVMVFlnTmlBd0lESXVNaklnTVM0eU1TQTBMakUxSURNZ05TNHhPUzR6TkM0eUxqYzNMakExTGprMExTNHlPUzR4TnkwdU16UXVNRE10TGpjMkxTNHpMUzQ1TmtNNExqSTRJREUxTGpFeElEY3VOU0F4TXk0Mk5TQTNMalVnTVRKak1DMHlMalE0SURJdU1ESXROQzQxSURRdU5TMDBMalZ6TkM0MUlESXVNRElnTkM0MUlEUXVOV013SURFdU5qVXRMamM0SURNdU1URXRNaTR4TkNBekxqazBMUzR6TXk0eUxTNDBOeTQyTWkwdU15NDVOaTR4Tnk0ek5DNDJMalE1TGprMExqSTVJREV1TnprdE1TNHdOQ0F6TFRJdU9UY2dNeTAxTGpFNUlEQXRNeTR6TVMweUxqWTVMVFl0TmkwMmVpSXZQanhqYVhKamJHVWdZM2c5SWpJMU5pSWdZM2s5SWpJMU5pSWdjajBpTWpjaUlHWnBiR3c5SWlObVptWm1abVlpTHo0OEwzTjJaejQ9IiwgInNpemVzIjogIjUxMng1MTIiLCAidHlwZSI6ICJpbWFnZS9zdmcreG1sIiwgInB1cnBvc2UiOiAiYW55IG1hc2thYmxlIn1dfQ==" />
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjEwMCIgZmlsbD0iIzEwYjk4MSIvPjxwYXRoIGZpbGw9IiNmZmZmZmYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDk2LDk2KSBzY2FsZSgxMy42KSIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyYzAgMy42NiAyLjAxIDYuODQgNC45OSA4LjU5LjM1LjIuNzcuMDYuOTQtLjI4LjE2LS4zNC4wMi0uNzUtLjMyLS45NkM1LjA3IDE3Ljg0IDMuNSAxNS4xMSAzLjUgMTJjMC00LjY5IDMuODEtOC41IDguNS04LjVzOC41IDMuODEgOC41IDguNWMwIDMuMTEtMS41NyA1Ljg0LTQuMTEgNy4zNS0uMzQuMjEtLjQ4LjYyLS4zMi45Ni4xNy4zNC41OS40OC45NC4yOEMxOS45OSAxOC44NCAyMiAxNS42NiAyMiAxMmMwLTUuNTItNC40OC0xMC0xMC0xMHoiLz48cGF0aCBmaWxsPSIjZmZmZmZmIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5Niw5Nikgc2NhbGUoMTMuNikiIGQ9Ik0xMiA2Yy0zLjMxIDAtNiAyLjY5LTYgNiAwIDIuMjIgMS4yMSA0LjE1IDMgNS4xOS4zNC4yLjc3LjA1Ljk0LS4yOS4xNy0uMzQuMDMtLjc2LS4zLS45NkM4LjI4IDE1LjExIDcuNSAxMy42NSA3LjUgMTJjMC0yLjQ4IDIuMDItNC41IDQuNS00LjVzNC41IDIuMDIgNC41IDQuNWMwIDEuNjUtLjc4IDMuMTEtMi4xNCAzLjk0LS4zMy4yLS40Ny42Mi0uMy45Ni4xNy4zNC42LjQ5Ljk0LjI5IDEuNzktMS4wNCAzLTIuOTcgMy01LjE5IDAtMy4zMS0yLjY5LTYtNi02eiIvPjxjaXJjbGUgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMjciIGZpbGw9IiNmZmZmZmYiLz48L3N2Zz4=" />
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjEwMCIgZmlsbD0iIzEwYjk4MSIvPjxwYXRoIGZpbGw9IiNmZmZmZmYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDk2LDk2KSBzY2FsZSgxMy42KSIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyYzAgMy42NiAyLjAxIDYuODQgNC45OSA4LjU5LjM1LjIuNzcuMDYuOTQtLjI4LjE2LS4zNC4wMi0uNzUtLjMyLS45NkM1LjA3IDE3Ljg0IDMuNSAxNS4xMSAzLjUgMTJjMC00LjY5IDMuODEtOC41IDguNS04LjVzOC41IDMuODEgOC41IDguNWMwIDMuMTEtMS41NyA1Ljg0LTQuMTEgNy4zNS0uMzQuMjEtLjQ4LjYyLS4zMi45Ni4xNy4zNC41OS40OC45NC4yOEMxOS45OSAxOC44NCAyMiAxNS42NiAyMiAxMmMwLTUuNTItNC40OC0xMC0xMC0xMHoiLz48cGF0aCBmaWxsPSIjZmZmZmZmIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5Niw5Nikgc2NhbGUoMTMuNikiIGQ9Ik0xMiA2Yy0zLjMxIDAtNiAyLjY5LTYgNiAwIDIuMjIgMS4yMSA0LjE1IDMgNS4xOS4zNC4yLjc3LjA1Ljk0LS4yOS4xNy0uMzQuMDMtLjc2LS4zLS45NkM4LjI4IDE1LjExIDcuNSAxMy42NSA3LjUgMTJjMC0yLjQ4IDIuMDItNC41IDQuNS00LjVzNC41IDIuMDIgNC41IDQuNWMwIDEuNjUtLjc4IDMuMTEtMi4xNCAzLjk0LS4zMy4yLS40Ny42Mi0uMy45Ni4xNy4zNC42LjQ5Ljk0LjI5IDEuNzktMS4wNCAzLTIuOTcgMy01LjE5IDAtMy4zMS0yLjY5LTYtNi02eiIvPjxjaXJjbGUgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMjciIGZpbGw9IiNmZmZmZmYiLz48L3N2Zz4=" />
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg-dark: #0b0f17;
+    --card-bg: rgba(22, 28, 42, 0.75);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --primary: #10b981;
+    --primary-glow: rgba(16, 185, 129, 0.25);
+    --accent-blue: #3b82f6;
+    --accent-cyan: #06b6d4;
+    --accent-amber: #f59e0b;
+    --accent-red: #ef4444;
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+    --off-bg: #1f293d;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: radial-gradient(circle at 50% 0%, #152238 0%, var(--bg-dark) 70%);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container {
+    width: min(960px, 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* Header */
+  header {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .brand-icon {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px var(--primary-glow);
+  }
+
+  .brand-icon svg {
+    width: 26px;
+    height: 26px;
+    fill: white;
+  }
+
+  .brand-text h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #ffffff, #a7f3d0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .brand-text p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .connection-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    border: 1px solid var(--card-border);
+  }
+
+  .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--accent-red);
+    box-shadow: 0 0 10px var(--accent-red);
+    transition: background 0.3s, box-shadow 0.3s;
+  }
+
+  .connection-badge.connected .dot {
+    background: var(--primary);
+    box-shadow: 0 0 10px var(--primary);
+  }
+
+  /* Critical Warning Banner */
+  .alert-banner {
+    display: none;
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    color: #fca5a5;
+    padding: 14px 20px;
+    border-radius: 14px;
+    align-items: center;
+    gap: 12px;
+    animation: pulse 2s infinite;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .alert-banner.active {
+    display: flex;
+  }
+
+  @keyframes pulse {
+    0%, 100% { border-color: rgba(239, 68, 68, 0.4); }
+    50% { border-color: rgba(239, 68, 68, 0.9); }
+  }
+
+  /* Grid Layouts */
+  .grid-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px;
+  }
+
+  .card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+
+  .card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.18);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+
+  .card-title {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .card-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .temp-icon { background: rgba(239, 68, 68, 0.15); color: #f87171; }
+  .hum-icon { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
+  .soil-icon { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+  .tank-icon { background: rgba(6, 182, 212, 0.15); color: #22d3ee; }
+
+  .card-value {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.3rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  .card-subtext {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .status-tag {
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 0.72rem;
+    font-weight: 600;
+  }
+
+  .tag-good { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+  .tag-warn { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+  .tag-alert { background: rgba(239, 68, 68, 0.2); color: #f87171; }
+
+  /* Progress Bar / Tank Graphic */
+  .progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-top: 10px;
+  }
+
+  .progress-fill {
+    height: 100%;
+    border-radius: 999px;
+    width: 0%;
+    transition: width 0.5s ease-in-out, background 0.3s;
+  }
+
+  /* Control Section */
+  .control-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
+
+  .control-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .control-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .control-name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+
+  .control-desc {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Toggle Switch */
+  .toggle-btn {
+    width: 64px;
+    height: 34px;
+    background: var(--off-bg);
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+  }
+
+  .toggle-btn::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    width: 26px;
+    height: 26px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  }
+
+  .toggle-btn.active {
+    background: linear-gradient(135deg, #10b981, #059669);
+    border-color: #10b981;
+    box-shadow: 0 0 16px var(--primary-glow);
+  }
+
+  .toggle-btn.active::after {
+    transform: translateX(28px);
+  }
+
+  .toggle-btn.fan-btn.active {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    border-color: #3b82f6;
+    box-shadow: 0 0 16px rgba(59, 130, 246, 0.3);
+  }
+
+  .toggle-btn.auto-btn.active {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    border-color: #f59e0b;
+    box-shadow: 0 0 16px rgba(245, 158, 11, 0.3);
+  }
+
+  .control-card.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  /* Notifications & Log Feed */
+  .log-section {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+    padding: 22px;
+  }
+
+  .log-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  .log-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .clear-log-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .log-list {
+    max-height: 180px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .log-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 0.84rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .log-time {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  .log-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Demo / Simulation Panel */
+  .sim-panel {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .sim-title {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .sim-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .sim-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-main);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .sim-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  /* History Section */
+  .history-section {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+    padding: 22px;
+  }
+
+  .history-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .history-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .history-range {
+    display: flex;
+    gap: 6px;
+  }
+
+  .range-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    color: var(--text-muted);
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .range-btn.active {
+    background: rgba(16, 185, 129, 0.2);
+    border-color: var(--primary);
+    color: #34d399;
+  }
+
+  .history-table-wrap {
+    overflow-x: auto;
+    max-height: 320px;
+    overflow-y: auto;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  table.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+  }
+
+  .history-table thead th {
+    position: sticky;
+    top: 0;
+    background: #131a29;
+    color: var(--text-muted);
+    text-align: left;
+    padding: 10px 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .history-table tbody td {
+    padding: 9px 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    white-space: nowrap;
+  }
+
+  .history-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .history-empty {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    padding: 24px;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 12px;
+  }
+
+  /* Get the App / Install & QR Card */
+  .install-card {
+    background: linear-gradient(135deg, rgba(16,185,129,0.12), rgba(6,182,212,0.08));
+    border: 1px solid rgba(16,185,129,0.25);
+    border-radius: 18px;
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .install-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .install-title {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 1.02rem;
+  }
+
+  .install-desc {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .install-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .install-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s, opacity 0.15s;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .install-btn:hover { transform: translateY(-1px); }
+
+  .install-btn.primary {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: #06120d;
+  }
+
+  .install-btn.secondary {
+    background: rgba(255,255,255,0.08);
+    color: var(--text-main);
+    border: 1px solid var(--card-border);
+  }
+
+  .install-btn:disabled {
+    opacity: 0.45;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  /* QR Modal */
+  .qr-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 8, 14, 0.75);
+    backdrop-filter: blur(4px);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .qr-modal-overlay.active { display: flex; }
+
+  .qr-modal {
+    background: #131a29;
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 26px;
+    width: min(340px, 100%);
+    text-align: center;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+
+  .qr-modal h3 {
+    font-family: 'Outfit', sans-serif;
+    margin-bottom: 6px;
+  }
+
+  .qr-modal p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+
+  #qrCodeBox {
+    background: #fff;
+    padding: 14px;
+    border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .qr-url {
+    margin-top: 14px;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    word-break: break-all;
+  }
+
+  .qr-close-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: rgba(255,255,255,0.08);
+    border: none;
+    color: var(--text-main);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.9rem;
+    line-height: 1;
+  }
+
+  .qr-steps {
+    text-align: left;
+    font-size: 0.76rem;
+    color: var(--text-muted);
+    margin-top: 14px;
+    line-height: 1.6;
+  }
+
+  /* Notification permission banner */
+  .notif-banner {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: #93c5fd;
+    padding: 12px 18px;
+    border-radius: 14px;
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+  }
+
+  .notif-banner.active { display: flex; }
+
+  .notif-banner button {
+    background: rgba(59,130,246,0.2);
+    border: 1px solid rgba(59,130,246,0.4);
+    color: #dbeafe;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Header -->
+  <header>
+    <div class="brand">
+      <div class="brand-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12c0 3.66 2.01 6.84 4.99 8.59.35.2.77.06.94-.28.16-.34.02-.75-.32-.96C5.07 17.84 3.5 15.11 3.5 12c0-4.69 3.81-8.5 8.5-8.5s8.5 3.81 8.5 8.5c0 3.11-1.57 5.84-4.11 7.35-.34.21-.48.62-.32.96.17.34.59.48.94.28C19.99 18.84 22 15.66 22 12c0-5.52-4.48-10-10-10z"/>
+          <path d="M12 6c-3.31 0-6 2.69-6 6 0 2.22 1.21 4.15 3 5.19.34.2.77.05.94-.29.17-.34.03-.76-.3-.96C8.28 15.11 7.5 13.65 7.5 12c0-2.48 2.02-4.5 4.5-4.5s4.5 2.02 4.5 4.5c0 1.65-.78 3.11-2.14 3.94-.33.2-.47.62-.3.96.17.34.6.49.94.29 1.79-1.04 3-2.97 3-5.19 0-3.31-2.69-6-6-6z"/>
+          <path d="M12 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <h1>GreenLink</h1>
+        <p>Smart Agriculture & Environment System</p>
+      </div>
+    </div>
+
+    <div class="connection-badge" id="connBadge">
+      <div class="dot"></div>
+      <span id="connStatusText">Connecting...</span>
+    </div>
+  </header>
+
+  <!-- Get the App: Install & QR Card -->
+  <div class="install-card">
+    <div class="install-info">
+      <div class="install-title">📲 Get GreenLink as an app</div>
+      <div class="install-desc">Install on your phone's home screen, or scan the QR code to open it on another device.</div>
+    </div>
+    <div class="install-actions">
+      <button class="install-btn primary" id="installBtn" disabled>⬇️ Install App</button>
+      <button class="install-btn secondary" id="showQrBtn">🔳 Show QR Code</button>
+    </div>
+  </div>
+
+  <!-- Notification Permission Banner -->
+  <div class="notif-banner" id="notifBanner">
+    <span>🔔 Enable notifications to get alerts even when this app isn't open.</span>
+    <button id="enableNotifBtn">Enable Alerts</button>
+  </div>
+
+  <!-- QR Code Modal -->
+  <div class="qr-modal-overlay" id="qrModalOverlay">
+    <div class="qr-modal">
+      <button class="qr-close-btn" id="qrCloseBtn">✕</button>
+      <h3>Scan to open GreenLink</h3>
+      <p>Point your phone's camera at this code to open the dashboard, then install it as an app.</p>
+      <div id="qrCodeBox"></div>
+      <div class="qr-url" id="qrUrlText"></div>
+      <div class="qr-steps">
+        <strong>Android (Chrome):</strong> tap ⋮ → "Add to Home screen" or use the Install button above.<br><br>
+        <strong>iPhone (Safari):</strong> tap the Share icon → "Add to Home Screen".
+      </div>
+    </div>
+  </div>
+
+  <!-- Critical Warning Banner -->
+  <div class="alert-banner" id="waterLevelBanner">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+      <line x1="12" y1="9" x2="12" y2="13"/>
+      <line x1="12" y1="17" x2="12.01" y2="17"/>
+    </svg>
+    <span id="bannerMessage">Water level is low! Please refill the water tank immediately.</span>
+  </div>
+
+  <!-- Metric Cards -->
+  <div class="grid-metrics">
+    <!-- Temperature Card -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Temperature</span>
+        <div class="card-icon temp-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/>
+          </svg>
+        </div>
+      </div>
+      <div class="card-value"><span id="tempValue">--</span> &deg;C</div>
+      <div class="card-subtext">
+        <span>Target: 20–28&deg;C</span>
+        <span class="status-tag tag-good" id="tempTag">Normal</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="tempBar" style="background: var(--accent-red);"></div>
+      </div>
+    </div>
+
+    <!-- Humidity Card -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Humidity</span>
+        <div class="card-icon hum-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+          </svg>
+        </div>
+      </div>
+      <div class="card-value"><span id="humValue">--</span> %</div>
+      <div class="card-subtext">
+        <span>Air Moisture</span>
+        <span class="status-tag tag-good" id="humTag">Optimal</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="humBar" style="background: var(--accent-blue);"></div>
+      </div>
+    </div>
+
+    <!-- Soil Moisture Card -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Soil Moisture</span>
+        <div class="card-icon soil-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12A10 10 0 0 1 12 2z"/>
+            <path d="M12 6v6l4 2"/>
+          </svg>
+        </div>
+      </div>
+      <div class="card-value"><span id="soilValue">--</span> %</div>
+      <div class="card-subtext">
+        <span>Range: 60% – 85%</span>
+        <span class="status-tag tag-good" id="soilTag">Optimal</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="soilBar" style="background: var(--primary);"></div>
+      </div>
+    </div>
+
+    <!-- Water Tank Level Card -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Water Tank Level</span>
+        <div class="card-icon tank-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+            <line x1="2" y1="20" x2="22" y2="20"/>
+          </svg>
+        </div>
+      </div>
+      <div class="card-value"><span id="tankValue">--</span> %</div>
+      <div class="card-subtext">
+        <span>Ultrasonic Sensor</span>
+        <span class="status-tag tag-good" id="tankTag">Sufficient</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="tankBar" style="background: var(--accent-cyan);"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Control Section -->
+  <div class="control-section">
+    <!-- Auto / Manual Mode -->
+    <div class="control-card">
+      <div class="control-info">
+        <div class="control-name">Auto Mode</div>
+        <div class="control-desc" id="autoModeDesc">Device controls pump &amp; fan automatically</div>
+      </div>
+      <button class="toggle-btn auto-btn" id="autoModeBtn" title="Toggle Automatic / Manual Mode"></button>
+    </div>
+
+    <!-- Water Mist (Pump) Control -->
+    <div class="control-card" id="waterMistCard">
+      <div class="control-info">
+        <div class="control-name">Water Mist</div>
+        <div class="control-desc">Automated Pump (ON &lt;60%, OFF &ge;85%)</div>
+      </div>
+      <button class="toggle-btn" id="waterMistBtn" title="Toggle Water Mist Pump"></button>
+    </div>
+
+    <!-- Fan Control -->
+    <div class="control-card" id="fanCard">
+      <div class="control-info">
+        <div class="control-name">Cooling Fan</div>
+        <div class="control-desc">Auto Cooling (ON &ge;30&deg;C)</div>
+      </div>
+      <button class="toggle-btn fan-btn" id="fanBtn" title="Toggle Cooling Fan"></button>
+    </div>
+  </div>
+
+  <!-- Notification Feed Log -->
+  <div class="log-section">
+    <div class="log-header">
+      <div class="log-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+          <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+        </svg>
+        Live Notifications & Alert Log
+      </div>
+      <button class="clear-log-btn" id="clearLogBtn">Clear Log</button>
+    </div>
+    <div class="log-list" id="logList">
+      <div class="log-item">
+        <div class="log-text">System initialized and listening for updates...</div>
+        <div class="log-time">Just now</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- History Section -->
+  <div class="history-section">
+    <div class="history-header">
+      <div class="history-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+        Sensor History
+      </div>
+      <div class="history-range">
+        <button class="range-btn active" data-limit="20">Last 20</button>
+        <button class="range-btn" data-limit="50">Last 50</button>
+        <button class="range-btn" data-limit="100">Last 100</button>
+      </div>
+    </div>
+    <div class="history-table-wrap">
+      <table class="history-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Temp (&deg;C)</th>
+            <th>Humidity (%)</th>
+            <th>Soil (%)</th>
+            <th>Tank (%)</th>
+            <th>Pump</th>
+            <th>Fan</th>
+          </tr>
+        </thead>
+        <tbody id="historyTableBody">
+          <tr><td colspan="7" class="history-empty">Loading history...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Simulator / Demo Controls for testing without hardware -->
+  <div class="sim-panel">
+    <div class="sim-title">Test Simulator (Quick Demo Triggers)</div>
+    <div class="sim-actions">
+      <button class="sim-btn" onclick="simulateDrySoil()">Simulate Dry Soil (&lt;60%)</button>
+      <button class="sim-btn" onclick="simulateHighTemp()">Simulate High Temp (&ge;30&deg;C)</button>
+      <button class="sim-btn" onclick="simulateLowWater()">Simulate Low Tank Level (&lt;20%)</button>
+      <button class="sim-btn" onclick="resetSim()">Reset Optimal</button>
+    </div>
+  </div>
+
+  <footer>
+    GreenLink Smart IoT Agriculture System &bull; Powered by ESP32 & Firebase Realtime Database
+  </footer>
+</div>
+
+<!-- Firebase Compat SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-database-compat.js"></script>
+
+<!-- QR Code generator (pure JS, no dependencies) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyDPOL2Jg4yDcLeY0pwAlj_MXk_fnzbL7Nc",
+    authDomain: "green-house-by-greenlink.firebaseapp.com",
+    databaseURL: "https://green-house-by-greenlink-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "green-house-by-greenlink",
+    storageBucket: "green-house-by-greenlink.firebasestorage.app",
+    messagingSenderId: "312150197694",
+    appId: "1:312150197694:web:0ed1bb464bd6fa1c68e5ef"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+
+  // DOM Elements
+  const connBadge = document.getElementById("connBadge");
+  const connStatusText = document.getElementById("connStatusText");
+  const waterLevelBanner = document.getElementById("waterLevelBanner");
+
+  const tempValue = document.getElementById("tempValue");
+  const tempTag = document.getElementById("tempTag");
+  const tempBar = document.getElementById("tempBar");
+
+  const humValue = document.getElementById("humValue");
+  const humTag = document.getElementById("humTag");
+  const humBar = document.getElementById("humBar");
+
+  const soilValue = document.getElementById("soilValue");
+  const soilTag = document.getElementById("soilTag");
+  const soilBar = document.getElementById("soilBar");
+
+  const tankValue = document.getElementById("tankValue");
+  const tankTag = document.getElementById("tankTag");
+  const tankBar = document.getElementById("tankBar");
+
+  const waterMistBtn = document.getElementById("waterMistBtn");
+  const fanBtn = document.getElementById("fanBtn");
+  const autoModeBtn = document.getElementById("autoModeBtn");
+  const autoModeDesc = document.getElementById("autoModeDesc");
+  const waterMistCard = document.getElementById("waterMistCard");
+  const fanCard = document.getElementById("fanCard");
+  const logList = document.getElementById("logList");
+
+  // State Tracking
+  let currentMistState = false;
+  let currentFanState = false;
+  let currentAutoMode = true;
+  let prevSoil = null;
+  let prevTemp = null;
+  let prevWaterLevel = null;
+
+  // Add Notification to Log Feed
+  function addNotification(msg, type = "info") {
+    const item = document.createElement("div");
+    item.className = "log-item";
+    
+    let icon = "ℹ️";
+    if (type === "alert") icon = "⚠️";
+    if (type === "action") icon = "⚡";
+    if (type === "success") icon = "✅";
+
+    const timeStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    
+    item.innerHTML = `
+      <div class="log-text"><span>${icon}</span> <span>${msg}</span></div>
+      <div class="log-time">${timeStr}</div>
+    `;
+    
+    logList.insertBefore(item, logList.firstChild);
+  }
+
+  document.getElementById("clearLogBtn").addEventListener("click", () => {
+    logList.innerHTML = '';
+  });
+
+  // --- Realtime Database Listeners ---
+
+  // Connection Status
+  db.ref(".info/connected").on("value", (snap) => {
+    const connected = snap.val() === true;
+    connStatusText.textContent = connected ? "Connected" : "Disconnected";
+    connBadge.classList.toggle("connected", connected);
+  });
+
+  // Temperature
+  db.ref("/sensor/temperature").on("value", (snap) => {
+    const val = snap.val();
+    if (val === null) return;
+    tempValue.textContent = val.toFixed(1);
+    const pct = Math.min(100, Math.max(0, (val / 50) * 100));
+    tempBar.style.width = pct + "%";
+
+    if (val >= 30.0) {
+      tempTag.textContent = "High";
+      tempTag.className = "status-tag tag-alert";
+      if (prevTemp !== null && prevTemp < 30.0) {
+        addNotification(`Temperature increased to ${val.toFixed(1)}°C (High Temp Alert)`, "alert");
+      }
+    } else {
+      tempTag.textContent = "Normal";
+      tempTag.className = "status-tag tag-good";
+    }
+    prevTemp = val;
+  });
+
+  // Humidity
+  db.ref("/sensor/humidity").on("value", (snap) => {
+    const val = snap.val();
+    if (val === null) return;
+    humValue.textContent = val.toFixed(1);
+    humBar.style.width = Math.min(100, Math.max(0, val)) + "%";
+
+    if (val > 75) {
+      humTag.textContent = "High";
+      humTag.className = "status-tag tag-warn";
+    } else {
+      humTag.textContent = "Optimal";
+      humTag.className = "status-tag tag-good";
+    }
+  });
+
+  // Soil Moisture
+  db.ref("/sensor/soil_moisture").on("value", (snap) => {
+    const val = snap.val();
+    if (val === null) return;
+    soilValue.textContent = val.toFixed(1);
+    soilBar.style.width = Math.min(100, Math.max(0, val)) + "%";
+
+    if (val < 60) {
+      soilTag.textContent = "Dry (<60%)";
+      soilTag.className = "status-tag tag-alert";
+      if (prevSoil === null || prevSoil >= 60) {
+        addNotification(`Soil moisture decreased to ${val.toFixed(1)}% (< 60%). Water Mist activation triggered!`, "alert");
+      }
+    } else if (val >= 85) {
+      soilTag.textContent = "Saturated";
+      soilTag.className = "status-tag tag-good";
+    } else {
+      soilTag.textContent = "Optimal";
+      soilTag.className = "status-tag tag-good";
+    }
+    prevSoil = val;
+  });
+
+  // Water Tank Level (Ultrasonic Sensor)
+  db.ref("/sensor/water_level").on("value", (snap) => {
+    const val = snap.val();
+    if (val === null) return;
+    tankValue.textContent = val.toFixed(1);
+    tankBar.style.width = Math.min(100, Math.max(0, val)) + "%";
+
+    if (val < 20) {
+      tankTag.textContent = "Low!";
+      tankTag.className = "status-tag tag-alert";
+      waterLevelBanner.classList.add("active");
+      if (prevWaterLevel === null || prevWaterLevel >= 20) {
+        addNotification("Water level is low! Please refill the water tank.", "alert");
+      }
+    } else {
+      tankTag.textContent = "Sufficient";
+      tankTag.className = "status-tag tag-good";
+      waterLevelBanner.classList.remove("active");
+    }
+    prevWaterLevel = val;
+  });
+
+  // Auto / Manual Mode Sync
+  db.ref("/control/auto_mode").on("value", (snap) => {
+    // Treat an unset value (null) as auto ON, matching the device's default.
+    const newState = snap.val() === null ? true : !!snap.val();
+    if (currentAutoMode !== newState) {
+      addNotification(`Switched to ${newState ? "Automatic 🤖" : "Manual 🖐️"} mode`, "info");
+    }
+    currentAutoMode = newState;
+    autoModeBtn.classList.toggle("on", currentAutoMode);
+    autoModeBtn.classList.toggle("active", currentAutoMode);
+    autoModeDesc.textContent = currentAutoMode
+      ? "Device controls pump & fan automatically"
+      : "Manual control — toggles below take effect directly";
+
+    // While auto mode is on, the device can override manual toggles at any
+    // time, so grey out the pump/fan cards to make that clear.
+    waterMistCard.classList.toggle("disabled", currentAutoMode);
+    fanCard.classList.toggle("disabled", currentAutoMode);
+  });
+
+  autoModeBtn.addEventListener("click", () => {
+    db.ref("/control/auto_mode").set(!currentAutoMode);
+  });
+
+  // Water Mist (Pump) Control Sync
+  db.ref("/control/water_mist").on("value", (snap) => {
+    const newState = !!snap.val();
+    if (currentMistState !== newState && prevSoil !== null) {
+      addNotification(`Water Mist (Pump) ${newState ? 'Activated 🌧️' : 'Deactivated 🛑'}`, newState ? "action" : "info");
+    }
+    currentMistState = newState;
+    waterMistBtn.classList.toggle("on", currentMistState);
+    waterMistBtn.classList.toggle("active", currentMistState);
+  });
+
+  waterMistBtn.addEventListener("click", () => {
+    db.ref("/control/water_mist").set(!currentMistState);
+  });
+
+  // Fan Control Sync
+  db.ref("/control/fan").on("value", (snap) => {
+    const newState = !!snap.val();
+    if (currentFanState !== newState && prevTemp !== null) {
+      addNotification(`Cooling Fan ${newState ? 'Activated 🌀' : 'Deactivated 🛑'}`, newState ? "action" : "info");
+    }
+    currentFanState = newState;
+    fanBtn.classList.toggle("on", currentFanState);
+    fanBtn.classList.toggle("active", currentFanState);
+  });
+
+  fanBtn.addEventListener("click", () => {
+    db.ref("/control/fan").set(!currentFanState);
+  });
+
+  // --- History Table ---
+  const historyTableBody = document.getElementById("historyTableBody");
+  const rangeBtns = document.querySelectorAll(".range-btn");
+  let historyLimit = 20;
+  let historyRef = null;
+
+  function formatHistoryTime(ts) {
+    if (!ts) return "--";
+    const d = new Date(ts);
+    return d.toLocaleString([], { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit", second: "2-digit" });
+  }
+
+  function renderHistory(snap) {
+    const entries = [];
+    snap.forEach((child) => {
+      entries.push(child.val());
+    });
+    // Firebase push IDs / limitToLast return oldest-first; show newest-first.
+    entries.reverse();
+
+    if (entries.length === 0) {
+      historyTableBody.innerHTML = '<tr><td colspan="7" class="history-empty">No history yet. Once the ESP32 starts logging to /sensor_history, readings will appear here.</td></tr>';
+      return;
+    }
+
+    historyTableBody.innerHTML = entries.map((e) => `
+      <tr>
+        <td>${formatHistoryTime(e.timestamp)}</td>
+        <td>${e.temperature != null ? e.temperature.toFixed(1) : "--"}</td>
+        <td>${e.humidity != null ? e.humidity.toFixed(1) : "--"}</td>
+        <td>${e.soil_moisture != null ? e.soil_moisture.toFixed(1) : "--"}</td>
+        <td>${e.water_level != null ? e.water_level.toFixed(1) : "--"}</td>
+        <td>${e.water_mist ? "ON" : "OFF"}</td>
+        <td>${e.fan ? "ON" : "OFF"}</td>
+      </tr>
+    `).join("");
+  }
+
+  function subscribeHistory(limit) {
+    if (historyRef) historyRef.off(); // detach old listener before re-subscribing
+    historyRef = db.ref("/sensor_history").limitToLast(limit);
+    historyRef.on("value", renderHistory);
+  }
+
+  rangeBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      rangeBtns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      historyLimit = parseInt(btn.dataset.limit, 10);
+      subscribeHistory(historyLimit);
+    });
+  });
+
+  subscribeHistory(historyLimit);
+
+  // Manually log a snapshot to /sensor_history (used by the simulator below;
+  // once the ESP32 firmware logs history itself, this becomes optional).
+  function pushHistoryEntry() {
+    db.ref("/sensor_history").push({
+      temperature: prevTemp,
+      humidity: parseFloat(humValue.textContent) || null,
+      soil_moisture: prevSoil,
+      water_level: prevWaterLevel,
+      water_mist: currentMistState,
+      fan: currentFanState,
+      timestamp: Date.now()
+    });
+  }
+
+  // --- Demo Simulator Functions ---
+  function simulateDrySoil() {
+    db.ref("/sensor/soil_moisture").set(45.0);
+    db.ref("/control/water_mist").set(true);
+    setTimeout(pushHistoryEntry, 300);
+  }
+
+  function simulateHighTemp() {
+    db.ref("/sensor/temperature").set(33.5);
+    db.ref("/sensor/humidity").set(78.0);
+    db.ref("/control/fan").set(true);
+    setTimeout(pushHistoryEntry, 300);
+  }
+
+  function simulateLowWater() {
+    db.ref("/sensor/water_level").set(12.0);
+    setTimeout(pushHistoryEntry, 300);
+  }
+
+  function resetSim() {
+    db.ref("/sensor/temperature").set(24.5);
+    db.ref("/sensor/humidity").set(62.0);
+    db.ref("/sensor/soil_moisture").set(75.0);
+    db.ref("/sensor/water_level").set(85.0);
+    db.ref("/control/water_mist").set(false);
+    db.ref("/control/fan").set(false);
+    setTimeout(pushHistoryEntry, 300);
+  }
+
+  // =========================================================
+  // Installable App: QR Code, Add-to-Home-Screen, Notifications
+  // =========================================================
+
+  // --- Push a native OS notification for "alert"-level log entries too ---
+  const _originalAddNotification = addNotification;
+  addNotification = function(msg, type = "info") {
+    _originalAddNotification(msg, type);
+    if (type === "alert" && "Notification" in window && Notification.permission === "granted") {
+      try {
+        new Notification("GreenLink Alert", {
+          body: msg,
+          tag: "greenlink-alert",
+          renotify: true
+        });
+      } catch (e) { /* some browsers restrict Notification() outside a SW context */ }
+    }
+  };
+
+  // --- Notification permission banner ---
+  const notifBanner = document.getElementById("notifBanner");
+  const enableNotifBtn = document.getElementById("enableNotifBtn");
+
+  function refreshNotifBanner() {
+    if ("Notification" in window && Notification.permission === "default") {
+      notifBanner.classList.add("active");
+    } else {
+      notifBanner.classList.remove("active");
+    }
+  }
+  refreshNotifBanner();
+
+  enableNotifBtn.addEventListener("click", () => {
+    if (!("Notification" in window)) return;
+    Notification.requestPermission().then(() => refreshNotifBanner());
+  });
+
+  // --- QR Code modal: renders a QR code that points at THIS page's own URL,
+  // so it works no matter where you end up hosting this file. ---
+  const qrModalOverlay = document.getElementById("qrModalOverlay");
+  const showQrBtn = document.getElementById("showQrBtn");
+  const qrCloseBtn = document.getElementById("qrCloseBtn");
+  const qrCodeBox = document.getElementById("qrCodeBox");
+  const qrUrlText = document.getElementById("qrUrlText");
+  let qrRendered = false;
+
+  function renderQrCode() {
+    if (qrRendered) return;
+    const url = window.location.href;
+    qrUrlText.textContent = url;
+    try {
+      const qr = qrcode(0, "M");
+      qr.addData(url);
+      qr.make();
+      qrCodeBox.innerHTML = qr.createSvgTag({ scalable: true });
+      qrCodeBox.querySelector("svg").style.width = "200px";
+      qrCodeBox.querySelector("svg").style.height = "200px";
+      qrRendered = true;
+    } catch (e) {
+      qrCodeBox.textContent = "Could not generate QR code.";
+    }
+  }
+
+  showQrBtn.addEventListener("click", () => {
+    renderQrCode();
+    qrModalOverlay.classList.add("active");
+  });
+  qrCloseBtn.addEventListener("click", () => qrModalOverlay.classList.remove("active"));
+  qrModalOverlay.addEventListener("click", (e) => {
+    if (e.target === qrModalOverlay) qrModalOverlay.classList.remove("active");
+  });
+
+  // --- "Install App" button (Android / desktop Chrome & Edge) ---
+  const installBtn = document.getElementById("installBtn");
+  let deferredInstallPrompt = null;
+  const isStandalone = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+  const isIOS = /iphone|ipad|ipod/i.test(window.navigator.userAgent);
+
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredInstallPrompt = e;
+    installBtn.disabled = false;
+    installBtn.textContent = "⬇️ Install App";
+  });
+
+  installBtn.addEventListener("click", async () => {
+    if (deferredInstallPrompt) {
+      deferredInstallPrompt.prompt();
+      await deferredInstallPrompt.userChoice;
+      deferredInstallPrompt = null;
+      installBtn.disabled = true;
+    } else {
+      // No native prompt available (iOS Safari, or already installed) — show the QR
+      // modal instead, which includes manual "Add to Home Screen" steps.
+      renderQrCode();
+      qrModalOverlay.classList.add("active");
+    }
+  });
+
+  if (isStandalone) {
+    installBtn.disabled = true;
+    installBtn.textContent = "✅ App Installed";
+  } else if (isIOS) {
+    installBtn.disabled = false;
+    installBtn.textContent = "📖 How to Install";
+  }
+
+  window.addEventListener("appinstalled", () => {
+    installBtn.disabled = true;
+    installBtn.textContent = "✅ App Installed";
+    addNotification("GreenLink installed as an app on this device.", "success");
+  });
+
+  // --- Minimal Service Worker (registered from an in-memory Blob so the whole
+  // app stays a single file) — caches the app shell for offline/fast reloads
+  // and is required by Chrome/Android for the Install prompt to appear. ---
+  if ("serviceWorker" in navigator) {
+    const swSource = `
+      const CACHE_NAME = "greenlink-shell-v1";
+      self.addEventListener("install", (event) => {
+        self.skipWaiting();
+      });
+      self.addEventListener("activate", (event) => {
+        self.clients.claim();
+      });
+      self.addEventListener("fetch", (event) => {
+        // Network-first for everything; this keeps live Firebase data fresh
+        // and only falls back to a cached copy of the page shell if offline.
+        event.respondWith(
+          fetch(event.request)
+            .then((response) => {
+              if (event.request.method === "GET" && response.ok) {
+                const clone = response.clone();
+                caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+              }
+              return response;
+            })
+            .catch(() => caches.match(event.request))
+        );
+      });
+    `;
+    const swBlob = new Blob([swSource], { type: "application/javascript" });
+    const swUrl = URL.createObjectURL(swBlob);
+    navigator.serviceWorker.register(swUrl).catch((err) => {
+      console.warn("Service worker registration failed:", err);
+    });
+  }
+</script>
+</body>
+</html>
